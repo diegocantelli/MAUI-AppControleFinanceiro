@@ -1,5 +1,4 @@
-﻿using Android.Telephony.Data;
-using ControleFinanceiro;
+﻿using ControleFinanceiro;
 using ControleFinanceiro.Repositories;
 using LiteDB;
 using Microsoft.Extensions.Logging;

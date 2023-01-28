@@ -5,7 +5,7 @@
              Title="TransactionList">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Transaction List"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
