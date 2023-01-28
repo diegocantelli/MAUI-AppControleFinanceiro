@@ -6,4 +6,9 @@ public partial class TransactionList : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void OnButtonClicked_GoTo_TransactionAdd(object sender, EventArgs e)
+	{
+		AppControleFinanceiro.App.Current.MainPage = new TransactionAdd();
+	}
 }
