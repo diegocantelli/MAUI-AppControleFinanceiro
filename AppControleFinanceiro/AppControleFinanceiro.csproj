@@ -58,9 +58,22 @@
 	  <None Remove="Models\" />
 	  <None Remove="LiteDB" />
 	  <None Remove="Repositories\" />
+	  <None Remove="Views\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
 	  <Folder Include="Repositories\" />
+	  <Folder Include="Views\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Views\TransactionList.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TransactionAdd.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TransactionEdit.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
 	</ItemGroup>
 </Project>
