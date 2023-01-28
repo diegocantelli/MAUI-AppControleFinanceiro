@@ -1,4 +1,5 @@
 ﻿using Android.Telephony.Data;
+using ControleFinanceiro;
 using ControleFinanceiro.Repositories;
 using LiteDB;
 using Microsoft.Extensions.Logging;
@@ -30,7 +31,7 @@ public static class MauiProgram
 	{
         mauiAppBuilder.Services.AddSingleton<LiteDatabase>(
              options => {
-                 return new LiteDatabase($"Filename=caminho;Connection=Shared");
+                 return new LiteDatabase($"Filename={AppSettings.DatabasePath};Connection=Shared");
              }
              );
 
