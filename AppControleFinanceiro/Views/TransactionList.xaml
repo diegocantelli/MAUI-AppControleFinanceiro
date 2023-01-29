@@ -28,12 +28,56 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Button Text="Novo"
-                Clicked="OnButtonClicked_GoTo_TransactionAdd"
-                HorizontalOptions="Center"/>
+        
         <Button Text="Editar"
                 Clicked="OnButtonClicked_GoTo_TransactionEdit"
                 HorizontalOptions="Center"/>
+
+        <Border Margin="10" BackgroundColor="{StaticResource Black}"
+                Stroke="Transparent"
+                Padding="10"
+                StrokeShape="RoundRectangle 30"
+                >
+            <Grid ColumnDefinitions="*, 80" RowDefinitions="Auto, Auto, 30, Auto, Auto">
+                <Label Text="Saldo"
+                       TextColor="#979797"
+                       FontSize="16"
+                       Margin="10"/>
+
+                <Label Text="R$ 2.760,00" Grid.Row="1"
+                       TextColor="White"
+                       FontSize="32"/>
+
+                <Button Text="+"
+                    Clicked="OnButtonClicked_GoTo_TransactionAdd"
+                    HorizontalOptions="Center"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    FontSize="48"
+                    HeightRequest="54"
+                    WidthRequest="54"
+                    Padding="0"
+                    CornerRadius="27"/>
+
+                <Label Text="Receita"
+                       Grid.Row="3"
+                       TextColor="#979797"/>
+
+                <Label Text="840,00"
+                       Grid.Row="4"
+                       TextColor="White"/>
+
+                <Label Text="Despesa"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       TextColor="#979797"/>
+
+                <Label Text="840,00"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       TextColor="White"/>
+            </Grid>
+        </Border>
 
     </VerticalStackLayout>
 </ContentPage>
