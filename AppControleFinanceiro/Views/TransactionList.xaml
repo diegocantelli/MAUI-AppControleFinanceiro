@@ -5,6 +5,24 @@
              NavigationPage.HasNavigationBar="False"
              Title="Listagem">
     <VerticalStackLayout>
+        <Grid ColumnDefinitions="50,*,Auto" Padding="15">
+            <Label Text="S"
+                   Grid.Column="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="22"
+                   />
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Salário" />
+                <Label Text="29/01/2023"
+                       TextColor="#BABABA"/>
+            </VerticalStackLayout>
+            <Label Text="R$ 3.600,00"
+                   Grid.Column="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="{StaticResource Tertiary}"/>
+        </Grid>
         <Label 
             Text="Transaction List"
             VerticalOptions="Center" 
