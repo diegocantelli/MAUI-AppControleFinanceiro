@@ -18,11 +18,13 @@
                     HorizontalOptions="CenterAndExpand"
                     TextColor="White"
                     FontSize="Medium"/>
-                <Label Grid.Column="1"
-                    Text="+"
+                <Image Grid.Column="1"
                     HorizontalOptions="Center"
-                    TextColor="White"
-                    FontSize="Medium"/>
+                    Source="close.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
 
             </Grid>
         </Border>
