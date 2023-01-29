@@ -1,4 +1,5 @@
 ﻿namespace AppControleFinanceiro;
+using ControleFinanceiro.Views;
 
 public partial class App : Application
 {
@@ -6,7 +7,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new ControleFinanceiro.Views.TransactionList();
+		MainPage = new NavigationPage(new TransactionList());
 	}
 }
 
