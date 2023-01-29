@@ -9,7 +9,8 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Button Text="+" Clicked="OnButtonClicked_GoTo_TransactionAdd" />
+        <Button Text="Novo" Clicked="OnButtonClicked_GoTo_TransactionAdd" />
+        <Button Text="Editar" Clicked="OnButtonClicked_GoTo_TransactionEdit" />
 
     </VerticalStackLayout>
 </ContentPage>

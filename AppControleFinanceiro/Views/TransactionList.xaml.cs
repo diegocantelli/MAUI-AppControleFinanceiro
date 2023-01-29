@@ -11,4 +11,9 @@ public partial class TransactionList : ContentPage
 	{
 		AppControleFinanceiro.App.Current.MainPage = new TransactionAdd();
 	}
+
+    void OnButtonClicked_GoTo_TransactionEdit(Object sender, EventArgs e)
+    {
+		AppControleFinanceiro.App.Current.MainPage = new TransactionEdit();
+    }
 }

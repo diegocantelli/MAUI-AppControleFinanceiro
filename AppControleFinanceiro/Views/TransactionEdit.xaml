@@ -3,10 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ControleFinanceiro.Views.TransactionEdit"
              Title="TransactionEdit">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+     <VerticalStackLayout Spacing="10">
+        <Border BackgroundColor="Black"
+                Padding="15"
+                StrokeShape="RoundRectangle 30"
+                Margin="10"
+                Stroke="Transparent">
+            <Grid
+                RowDefinitions="Auto"
+                ColumnDefinitions="*, 30">
+
+                <Label Grid.Column="0"
+                    Text="Editar"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    FontSize="Medium"/>
+                <Label Grid.Column="1"
+                    Text="+"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    FontSize="Medium"/>
+
+            </Grid>
+        </Border>
+        <Grid ColumnDefinitions="*,*" Margin="10,0">
+            <RadioButton
+                IsChecked="True"
+                Content="Receita"
+                Grid.Column="0"/>
+            <RadioButton
+                IsChecked="False"
+                Content="Despesa"
+                HorizontalOptions="End"
+                Grid.Column="1"/>
+        </Grid>
+
+        <Entry Placeholder="Nome" Margin="15"/>
+        <DatePicker Margin="15"/>
+        <Entry Placeholder="Valor" Margin="15"/>
+        <Button Text="Salvar" Margin="15" HorizontalOptions="CenterAndExpand"/>
     </VerticalStackLayout>
 </ContentPage>
