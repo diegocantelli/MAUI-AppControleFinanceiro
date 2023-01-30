@@ -3,11 +3,15 @@ using ControleFinanceiro.Views;
 
 public partial class App : Application
 {
-	public App()
+    private readonly TransactionList _transactionList;
+
+    public App(TransactionList transactionList)
 	{
 		InitializeComponent();
 
-		MainPage = new NavigationPage(new TransactionList());
+		_transactionList = transactionList;
+
+        MainPage = new NavigationPage(_transactionList);
 	}
 }
 

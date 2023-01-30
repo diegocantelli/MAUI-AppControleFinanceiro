@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Transactions;
 using LiteDB;
 
 namespace ControleFinanceiro.Repositories
@@ -14,26 +13,26 @@ namespace ControleFinanceiro.Repositories
             _database = database;
         }
 
-        public void Add(Transaction transaction)
+        public void Add(Models.Transaction transaction)
         {
-            var col = _database.GetCollection<Transaction>(collectionName);
+            var col = _database.GetCollection<Models.Transaction>(collectionName);
             col.Insert(transaction);
         }
 
-        public void Delete(Transaction transaction)
+        public void Delete(Models.Transaction transaction)
         {
             throw new NotImplementedException();
         }
 
-        public List<Transaction> GetAll()
+        public List<Models.Transaction> GetAll()
         {
             return _database
-                .GetCollection<Transaction>(collectionName)
+                .GetCollection<Models.Transaction>(collectionName)
                 .Query()
                 .ToList();
         }
 
-        public void Update(Transaction transaction)
+        public void Update(Models.Transaction transaction)
         {
             throw new NotImplementedException();
         }

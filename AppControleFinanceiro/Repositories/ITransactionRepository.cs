@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Transactions;
 
 namespace ControleFinanceiro.Repositories
 {
 	public interface ITransactionRepository
 	{
-        void Add(Transaction transaction);
-        void Delete(Transaction transaction);
-        List<Transaction> GetAll();
-        void Update(Transaction transaction);
+        void Add(Models.Transaction transaction);
+        void Delete(Models.Transaction transaction);
+        List<Models.Transaction> GetAll();
+        void Update(Models.Transaction transaction);
     }
 }
 
