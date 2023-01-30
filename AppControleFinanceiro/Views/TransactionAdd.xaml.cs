@@ -11,4 +11,10 @@ public partial class TransactionAdd : ContentPage
     {
 		Navigation.PopModalAsync();
     }
+
+    void OnButtonClicked_Save(System.Object sender, System.EventArgs e)
+    {
+    }
+
+
 }
