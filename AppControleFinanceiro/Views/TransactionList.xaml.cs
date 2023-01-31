@@ -1,4 +1,6 @@
-﻿namespace ControleFinanceiro.Views;
+﻿using CommunityToolkit.Mvvm.Messaging;
+
+namespace ControleFinanceiro.Views;
 
 public partial class TransactionList : ContentPage
 {
@@ -13,6 +15,10 @@ public partial class TransactionList : ContentPage
         _transactionRepository = transactionRepository;
 
         CollectionViewTransactions.ItemsSource = _transactionRepository.GetAll();
+        WeakReferenceMessenger.Default.Register<string>(this, (e, msg) =>
+        {
+            CollectionViewTransactions.ItemsSource = _transactionRepository.GetAll();
+        });
     }
 
 	private void OnButtonClicked_GoTo_TransactionAdd(object sender, EventArgs e)
