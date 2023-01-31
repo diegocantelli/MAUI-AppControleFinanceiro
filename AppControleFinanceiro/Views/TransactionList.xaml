@@ -60,7 +60,8 @@
 
                 <Label Text="R$ 2.760,00" Grid.Row="1"
                        TextColor="White"
-                       FontSize="32"/>
+                       FontSize="32"
+                       x:Name="LabelBalance"/>
 
                 <Button Text="+"
                     Clicked="OnButtonClicked_GoTo_TransactionAdd"
@@ -79,7 +80,8 @@
 
                 <Label Text="840,00"
                        Grid.Row="4"
-                       TextColor="White"/>
+                       TextColor="White"
+                       x:Name="LabelIncome"/>
 
                 <Label Text="Despesa"
                        Grid.Row="3"
@@ -89,7 +91,8 @@
                 <Label Text="840,00"
                        Grid.Row="4"
                        Grid.Column="1"
-                       TextColor="White"/>
+                       TextColor="White"
+                       x:Name="LabelExpense"/>
             </Grid>
         </Border>
 

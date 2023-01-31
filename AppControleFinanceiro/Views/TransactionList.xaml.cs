@@ -14,14 +14,33 @@ public partial class TransactionList : ContentPage
 		InitializeComponent();
         _transactionRepository = transactionRepository;
 
-        CollectionViewTransactions.ItemsSource = _transactionRepository.GetAll();
+        Reload();
         WeakReferenceMessenger.Default.Register<string>(this, (e, msg) =>
         {
-            CollectionViewTransactions.ItemsSource = _transactionRepository.GetAll();
+            Reload();
         });
     }
 
-	private void OnButtonClicked_GoTo_TransactionAdd(object sender, EventArgs e)
+    private void Reload()
+    {
+        var items = _transactionRepository.GetAll();
+        CollectionViewTransactions.ItemsSource = items;
+
+        double income = items.Where(x => x.Type == Models.TransactionType.Income)
+            .Sum(x => x.Value);
+
+        double expense = items.Where(x => x.Type == Models.TransactionType.Expense)
+            .Sum(x => x.Value);
+
+        double balance = income - expense;
+
+        LabelIncome.Text = income.ToString("C");
+        LabelExpense.Text = expense.ToString("C");
+        LabelBalance.Text = balance.ToString("C");
+
+    }
+
+    private void OnButtonClicked_GoTo_TransactionAdd(object sender, EventArgs e)
 	{
         var transactionAddView = Handler.MauiContext.Services.GetService<TransactionAdd>();
 		Navigation.PushModalAsync(transactionAddView);
