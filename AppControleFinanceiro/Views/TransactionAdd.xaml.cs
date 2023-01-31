@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using CommunityToolkit.Mvvm.Messaging;
 using ControleFinanceiro.Repositories;
 
 namespace ControleFinanceiro.Views;
@@ -18,12 +19,15 @@ public partial class TransactionAdd : ContentPage
 		Navigation.PopModalAsync();
     }
 
-    void OnButtonClicked_Save(System.Object sender, System.EventArgs e)
+    async void OnButtonClicked_Save(System.Object sender, System.EventArgs e)
     {
         if (!IsValidData())
             return;
 
         SaveTransactionInDatabase();
+        await Navigation.PopModalAsync();
+
+        WeakReferenceMessenger.Default.Send<string>(string.Empty);
     }
 
     private void SaveTransactionInDatabase()
