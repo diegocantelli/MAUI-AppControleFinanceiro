@@ -45,6 +45,9 @@
         <Entry x:Name="EntryName" Placeholder="Nome" Margin="15"/>
         <DatePicker x:Name="DatePickerDate" Margin="15"/>
         <Entry x:Name="EntryValue" Placeholder="Valor" Margin="15"/>
-        <Button Text="Salvar" Margin="15" HorizontalOptions="CenterAndExpand"/>
+        <Button Text="Salvar"
+                Margin="15"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

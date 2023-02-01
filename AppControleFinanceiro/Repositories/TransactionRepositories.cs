@@ -34,7 +34,8 @@ namespace ControleFinanceiro.Repositories
 
         public void Update(Models.Transaction transaction)
         {
-            throw new NotImplementedException();
+            var col = _database.GetCollection<Models.Transaction>(collectionName);
+            col.Update(transaction);
         }
     }
 }
