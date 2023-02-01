@@ -46,9 +46,14 @@ public partial class TransactionList : ContentPage
 		Navigation.PushModalAsync(transactionAddView);
 	}
 
-    void OnButtonClicked_GoTo_TransactionEdit(Object sender, EventArgs e)
+    void TapGestureRecognizer_Tapped_Goto_TransactionEdit(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
+        var grid = (Grid)sender;
+        var gesture = (TapGestureRecognizer)grid.GestureRecognizers[0];
+        var transaction = (Models.Transaction)gesture.CommandParameter;
+
         var transactionEditView = Handler.MauiContext.Services.GetService<TransactionEdit>();
+        transactionEditView.SetTransactionToEdit(transaction);
 
         Navigation.PushModalAsync(transactionEditView);
     }

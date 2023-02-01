@@ -13,6 +13,11 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid ColumnDefinitions="50,*,Auto" Padding="15">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding .}"
+                                Tapped="TapGestureRecognizer_Tapped_Goto_TransactionEdit"/>
+                        </Grid.GestureRecognizers>
                         <Label Text="S"
                                 Grid.Column="0"
                                 HorizontalOptions="Center"
@@ -43,10 +48,6 @@
             HorizontalOptions="Center" />
 
         
-        <Button Text="Editar"
-                Clicked="OnButtonClicked_GoTo_TransactionEdit"
-                HorizontalOptions="Center"/>
-
         <Border Margin="10" BackgroundColor="{StaticResource Black}"
                 Stroke="Transparent"
                 Padding="10"
