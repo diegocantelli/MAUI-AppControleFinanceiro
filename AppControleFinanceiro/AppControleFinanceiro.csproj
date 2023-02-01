@@ -61,11 +61,13 @@
 	  <None Remove="Repositories\" />
 	  <None Remove="Views\" />
 	  <None Remove="CommunityToolkit.Mvvm" />
+	  <None Remove="Converters\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
 	  <Folder Include="Repositories\" />
 	  <Folder Include="Views\" />
+	  <Folder Include="Converters\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\TransactionList.xaml">
