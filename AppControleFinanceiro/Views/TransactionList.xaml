@@ -10,6 +10,8 @@
         <ResourceDictionary>
             <converters:TransactionColorValueConverter x:Key="TransactionColorValueConverter" />
             <converters:TransactionValueConverter x:Key="TransactionValueConverter" />
+            <converters:TransactionNameColorConverter x:Key="TransactionNameColorConverter" />
+            <converters:TransationNameConverter x:Key="TransationNameConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <VerticalStackLayout>
@@ -23,12 +25,17 @@
                                 CommandParameter="{Binding .}"
                                 Tapped="TapGestureRecognizer_Tapped_Goto_TransactionEdit"/>
                         </Grid.GestureRecognizers>
-                        <Label Text="S"
-                                Grid.Column="0"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"
-                                FontSize="22"
-                                />
+                        <Border WidthRequest="40"
+                                HeightRequest="40"
+                                BackgroundColor="{Binding Name, Converter={StaticResource TransactionNameColorConverter}}"
+                                StrokeShape="RoundRectangle 20">
+                            <Label Text="{Binding Name, Converter={StaticResource TransationNameConverter}}"
+                                    Grid.Column="0"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    FontSize="22"
+                                    />
+                        </Border>
                         <VerticalStackLayout Grid.Column="1">
                             <Label Text="{Binding Name}" />
                             <Label Text="{Binding Date, StringFormat='{0:dd/MM//yyyy}'}"
