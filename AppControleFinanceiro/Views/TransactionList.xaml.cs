@@ -57,4 +57,16 @@ public partial class TransactionList : ContentPage
 
         Navigation.PushModalAsync(transactionEditView);
     }
+
+    private async Task AnimationBorder(Border border, bool IsDeleteAnimation)
+    {
+        if (IsDeleteAnimation)
+        {
+            await border.RotateYTo(180, 1000);
+        }
+        else
+        {
+
+        }
+    }
 }
